@@ -30,7 +30,7 @@ public class VueJetable implements ActionListener{
 		fenetre.setSize(1000, 800);
 		fenetre.setLocationRelativeTo(null);
 		fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		écranAccueil();
+		setPage(Session.traiterConnexion("Acceuil"));
 	}
 	
 	public void écranPanier() {
@@ -146,7 +146,9 @@ public class VueJetable implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		EnumTypeEcran vue = Session.traiterConnexion(e.getActionCommand());
+		setPage(Session.traiterConnexion(e.getActionCommand()));
+	}
+	private void setPage(EnumTypeEcran vue){
 		switch(vue){
 		case ECRAN_ACCUEIL:
 			écranAccueil();

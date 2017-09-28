@@ -10,7 +10,7 @@ public class Session extends JFrame {
 	
 	public static EnumTypeEcran traiterConnexion(String src) {
 		switch(src){
-		case "Accueil":
+		case "Acceuil":
 			return EnumTypeEcran.ECRAN_ACCUEIL;
 		case "S'identifier":
 			return EnumTypeEcran.ECRAN_PERSO;
