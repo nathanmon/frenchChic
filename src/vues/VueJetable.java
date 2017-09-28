@@ -20,14 +20,12 @@ import controleurs.Session;
 
 public class VueJetable implements ActionListener{
 	private JFrame fenetre;
-	private Session session = new Session();
-	private EnumTypeEcran vue;
 	public static void main(String[] args) {
 		new VueJetable();
 	}
 	public VueJetable(){
 		fenetre = new JFrame();
-		fenetre.setTitle("French chic - login");
+		fenetre.setTitle("French chic");
 		fenetre.pack();
 		fenetre.setSize(1000, 800);
 		fenetre.setLocationRelativeTo(null);
@@ -40,7 +38,15 @@ public class VueJetable implements ActionListener{
 		pan.setBackground(Color.WHITE);
 		pan.setLayout(new GridBagLayout());
 	    GridBagConstraints gbc = new GridBagConstraints();
-
+		JTextArea title = new JTextArea("Votre Panier");
+		title.setForeground(Color.MAGENTA);
+		title.setFont(new Font("Arial", Font.PLAIN, 100));
+		title.setEditable(false);
+	    title.setPreferredSize(new Dimension(600, 150));
+	    gbc.gridx = 0;
+	    gbc.gridy = 0;
+	    gbc.gridwidth = GridBagConstraints.REMAINDER;
+		pan.add(title, gbc);
 		fenetre.setContentPane(pan);
 		fenetre.setVisible(true);
 	}
